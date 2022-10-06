@@ -129,6 +129,9 @@ function clickHandler(e) {
     if (playerTurn >= 5) {
       areYaWinningSon(testBoard)
     }
+    if (playerTurn >= 10){
+      h1Text.innerText = 'TIE!'
+    }
     }
 
 
