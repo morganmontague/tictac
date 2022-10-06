@@ -3,6 +3,7 @@
 }
 body {
     background: lightblue;
+    font-family: "Audiowide", sans-serif;
 }
 
 .xcolor {
@@ -14,4 +15,6 @@ body {
 
 .borderbl {
     border: black 2px solid;
+    font-size: 70px;
+    font-family: "Audiowide", sans-serif;
 }

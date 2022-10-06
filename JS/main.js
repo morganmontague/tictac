@@ -104,6 +104,8 @@ function createElement (area, element, text, clas, parent) {
         }
       }
       
+      // let xImage = docuemnt.createElement('img');
+      // xImage.src = "./img/close.png"
       
       
       
