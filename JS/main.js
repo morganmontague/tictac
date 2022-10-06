@@ -1,12 +1,19 @@
 console.log('running')
 function init() {
 let bod = document.querySelector('body')
+bod.setAttribute('class', 'text-center')
 createElement('headerContainer', 'div', '', 'container justify content-center', bod)
 
 let headerContainer = document.getElementById('headerContainerid')
-createElement('h1', 'h1', 'Tic Tac Toe: X needs to go', 'h1', headerContainer)
+createElement('h1', 'h1', 'Tic Tac Toe: X needs to go', 'h1 m-4', headerContainer)
+
+///// add local storage to see how many times x or o has won \\\\\\\
 
 createElement('main', 'div', '', 'container',headerContainer)
+createElement('counter', 'div', 'X has won:   O has won:  Ties: ', 'h4 m-4', headerContainer )
+// let contain = document.getElementById(mainid)
+
+
 }
 init()
 let headerContainer = document.getElementById('headerContainerid')
@@ -63,11 +70,11 @@ function createElement (area, element, text, clas, parent) {
 
 
   function boardCreate() {
-  createElement('top', 'div', '', 'row', mainid);
+  createElement('top', 'div', '', 'row text-center', mainid);
   let rowParent = document.getElementById('topid');
-  console.log(rowParent)
+
   for (let index = 0; index < 9; index++) {
-    createCol(`${index}`, 'col-4 border', rowParent, `${index}`)
+    createCol('', 'col-4 border heightCheat fs-1', rowParent, `${index}`)
   }
   }
 
@@ -80,7 +87,6 @@ function createElement (area, element, text, clas, parent) {
   function areYaWinningSon() {
     for (let i = 0; i < winning.length; i++) {
       let line = winning[i]
-    console.log('line', line)
       let a = testBoard[line[0]];
       let b = testBoard[line[1]];
       let c = testBoard[line[2]];
@@ -90,11 +96,11 @@ function createElement (area, element, text, clas, parent) {
         }
         if (a === 'x' && b === 'x' && c ==='x') {
           h1Text.innerText = 'X Won'
-
+          removeClick()
           break}
         if (a === 'o' && b === 'o'&& c==='o') {
           h1Text.innerText = 'O Won'
-
+          removeClick()
           break}
         }
       }
@@ -150,7 +156,15 @@ function createElement (area, element, text, clas, parent) {
     
     addClick()
     
-    createElement('reset', 'button', 'RESET', 'btn btn-warning', headerContainer)
+    function removeClick() {
+      for (let i = 0; i < buttons.length; i++) {
+        const element = buttons[i];
+        element.removeEventListener('click', clickHandler)
+      }
+    }
+
+
+    createElement('reset', 'button', 'RESET', 'btn btn-warning m-4', headerContainer)
 
     let resetBtn = document.getElementById('resetid')
 
@@ -173,8 +187,16 @@ function createElement (area, element, text, clas, parent) {
     
     
     
+    function winCount (x, o, tie) {
+    
+          localStorage.setItem(x, 0);
+          localStorage.setItem(o, 0)
+          localStorage.setItem(tie, 0)
+        
+    }
 
-
+    winCount()
+  
 
     
     
