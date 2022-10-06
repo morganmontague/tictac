@@ -2,19 +2,18 @@ console.log('running')
 function init() {
 let bod = document.querySelector('body')
 bod.setAttribute('class', 'text-center')
-createElement('headerContainer', 'div', '', 'container justify content-center', bod)
+createElement('headerContainer', 'div', '', 'container justify-content-center', bod)
 
 let headerContainer = document.getElementById('headerContainerid')
 createElement('h1', 'h1', 'Tic Tac Toe: X needs to go', 'h1 m-4', headerContainer)
 
 ///// add local storage to see how many times x or o has won \\\\\\\
 
-createElement('main', 'div', '', 'container',headerContainer)
-createElement('counter', 'div', 'X has won:   O has won:  Ties: ', 'h4 m-4', headerContainer )
-// let contain = document.getElementById(mainid)
-
+createElement('main', 'div', '', 'container',headerContainer);
+createElement('counter', 'div', '  X has won: \n  O has won: \n Ties: ', 'h4 m-4', headerContainer);
 
 }
+
 init()
 let headerContainer = document.getElementById('headerContainerid')
 let mainArea = document.getElementById('mainid')
@@ -74,7 +73,7 @@ function createElement (area, element, text, clas, parent) {
   let rowParent = document.getElementById('topid');
 
   for (let index = 0; index < 9; index++) {
-    createCol('', 'col-4 border heightCheat fs-1', rowParent, `${index}`)
+    createCol('', 'col-4 border fs-1 heightCheat', rowParent, `${index}`)
   }
   }
 
@@ -187,15 +186,15 @@ function createElement (area, element, text, clas, parent) {
     
     
     
-    function winCount (x, o, tie) {
-    
-          localStorage.setItem(x, 0);
-          localStorage.setItem(o, 0)
-          localStorage.setItem(tie, 0)
+    // function winCount (xWin, oWin, tie) {
+          
+    //       localStorage.setItem(xWin, 0);
+    //       localStorage.setItem(oWin, 0);
+    //       localStorage.setItem(tie, 0);
         
-    }
+    // }
 
-    winCount()
+    // winCount()
   
 
     
