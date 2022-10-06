@@ -97,8 +97,6 @@ function multiplyAll(arr) {
 ];
 
 function areYaWinningSon(arr) {
-    let sum = 0;
-    // Only change code below this line
     for (let i = 0; i < arr.length; i++) {
         let a = arr[i][0]
         let b = arr[i][1]
@@ -110,28 +108,10 @@ function areYaWinningSon(arr) {
         if (a === 'x' && b === 'x' && c ==='x') {
             console.log('x won baby')
             break}
-            if (a === 'o' && b === 'o'&& c==='o') {
-                console.log('o won baby')
-                break}
-        //     console.log(sum+= arr[i])
-        // console.log(arr[i])
-        //   const subArray = arr[i];
-        // for (let j = 0; j < arr[i].length; j++) {
-        //     console.log(a+b+c)
-            // console.log(sum += arr[j]);
-        // console.log(arr[j].join(''))
-        // if(arr[j].join('') === 111){
-        //     console.log('x Won')
-        // }
-        // if (arr.join[j]===3){
-        //     console.log('true')
-        // }
-    //     console.log(product += subArray[j]);
-    //   }
+        if (a === 'o' && b === 'o'&& c==='o') {
+            console.log('o won baby')
+            break}
     }
-    // Only change code above this line
-    // console.log(product)
-    // return product;
   }
 
 
@@ -139,14 +119,6 @@ function areYaWinningSon(arr) {
 areYaWinningSon(winningThree)
 
 
-
-
-
-
-
-
-console.log(winningThree.length)
-console.log(winningThree)
 
 
 function createElement (area, element, text, clas, parent) {
@@ -168,6 +140,21 @@ function createElement (area, element, text, clas, parent) {
   // for (let index = 0; index < 9; index++){
   //   let `${index}Column` = document.getElementById(`${index}Colid`)
   // }
+
+  // let clicky = document.getElementsByClassName('col-4');
+  // console.log(clicky)
+  // clicky.addEventListener('click', ()=>{
+  //   console.log('clicked me')
+  // })
+
+  let attempt = document.getElementById('tile')
+function attemptToClick() {
+  console.log('This clicked')
+}
+
+attempt.setAttribute('onClick', 'attemptToClick()')
+
+
 
 
 
