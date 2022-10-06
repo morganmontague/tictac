@@ -1,4 +1,10 @@
 console.log('running')
+let bod = document.querySelector('body')
+createElement('headerContainer', 'div', '', 'container', bod)
+
+let headerContainer = document.getElementById('headerContainerid')
+createElement('h1', 'h1', 'Tic Tac Toe: X needs to go', 'h1', headerContainer)
+let h1Text = document.getElementById('h1id')
 
 
 // let cloneBoard = Array.from(board)
@@ -23,73 +29,57 @@ console.log('running')
 
 
   let playerTurn = 1
-  let btn = document.getElementById('clickMe')
-  btn.addEventListener('click', () => {
-    if (playerTurn % 2 === 0) {
-        tileText.textContent = 'O'
-        console.log('O works')
-        playerTurn = playerTurn +1
-    } else if (playerTurn % 2 === 1){
-        console.log('X works')
-        tileText.innerText = 'X'
-        playerTurn = playerTurn+1
-    }
-  }
-  )
-function changeTurn() {
-  if (playerTurn % 2 === 0) {
-    tileText.textContent = 'O'
-    console.log('O works')
-    playerTurn = playerTurn +1
-} else if (playerTurn % 2 === 1){
-    console.log('X works')
-    tileText.innerText = 'X'
-    playerTurn = playerTurn+1
-}
-}
+//   let btn = document.getElementById('clickMe')
+//   btn.addEventListener('click', () => {
+//     if (playerTurn % 2 === 0) {
+//         tileText.textContent = 'O'
+//         console.log('O works')
+//         playerTurn = playerTurn +1
+//     } else if (playerTurn % 2 === 1){
+//         console.log('X works')
+//         tileText.innerText = 'X'
+//         playerTurn = playerTurn+1
+//     }
+//   }
+//   )
+// function changeTurn() {
+//   if (playerTurn % 2 === 0) {
+//     tileText.textContent = 'O'
+//     console.log('O works')
+//     playerTurn = playerTurn +1
+// } else if (playerTurn % 2 === 1){
+//     console.log('X works')
+//     tileText.innerText = 'X'
+//     playerTurn = playerTurn+1
+// }
+// }
 
  
 
-  let board = [o,o,x,0,x,0,x,0,0]
-  board = [0,0,0,0,0,0,0,0,0]
-  console.log(board)
+  // let board = [o,o,x,0,x,0,x,0,0]
+  // board = [0,0,0,0,0,0,0,0,0]
+  // console.log(board)
   
 
 
- let winningThree = [
-    [board[0], board[1], board[2]],
-    [board[3], board[4], board[5]],
-    [board[6], board[7], board[8]],
-    [board[0], board[3], board[6]],
-    [board[1], board[4], board[7]],
-    [board[2], board[5], board[8]],
-    [board[0], board[4], board[8]],
-    [board[2], board[4], board[6]]
-];
+//  let winningThree = [
+//     [board[0], board[1], board[2]],
+//     [board[3], board[4], board[5]],
+//     [board[6], board[7], board[8]],
+//     [board[0], board[3], board[6]],
+//     [board[1], board[4], board[7]],
+//     [board[2], board[5], board[8]],
+//     [board[0], board[4], board[8]],
+//     [board[2], board[4], board[6]]
+// ];
 
-board.splice(5, 1, x)
-
-function areYaWinningSon(arr) {
-    for (let i = 0; i < arr.length; i++) {
-        let a = arr[i][0]
-        let b = arr[i][1]
-        let c = arr[i][2]
-        if (a === 0 || b === 0 || c === 0) {
-            console.log('nope')
-            continue;
-        }
-        if (a === 'x' && b === 'x' && c ==='x') {
-            console.log('x won baby')
-            break}
-        if (a === 'o' && b === 'o'&& c==='o') {
-            console.log('o won baby')
-            break}
-    }
-  }
+// board.splice(5, 1, x)
 
 
 
-areYaWinningSon(winningThree)
+
+
+// areYaWinningSon(winningThree)
 
 
 function changeBox() {
@@ -114,7 +104,7 @@ function createElement (area, element, text, clas, parent) {
     createElement.innerText = `${text}`
   }
 
-  createElement('top', 'div', '', 'row', blah);
+  createElement('top', 'div', '', 'row', headerContainer);
   let rowParent = document.getElementById('topid');
   console.log(rowParent)
   for (let index = 0; index < 9; index++) {
@@ -123,13 +113,6 @@ function createElement (area, element, text, clas, parent) {
 
 
 
-  let attempt = document.getElementById('tile')
-function attemptToClick() {
-  attempt.setAttribute('class', 'bg-success')
-  console.log('This clicked')
-}
-
-attempt.setAttribute('onClick', 'attemptToClick()')
 
 
 
@@ -199,8 +182,34 @@ whim()
 function clickHandler(e) {
     console.log('FROM REFERENCED FUNCTION');
     let colNumber = e.target.id;
-    console.log('TILE:', colNumber);
-}
+    // console.log('TILE:', colNumber);
+    let changeUp = document.getElementById(colNumber)
+    console.log(changeUp)
+    if (playerTurn % 2 === 0) {
+      changeUp.textContent = 'O'
+      changeUp.removeEventListener('click', clickHandler)
+      playerTurn = playerTurn +1
+    } else if (playerTurn % 2 === 1){
+      changeUp.removeEventListener('click', clickHandler)
+      changeUp.innerText = 'X'
+      playerTurn = playerTurn+1
+    }
+
+    updateH1()
+    }
+
+
+
+    // This changes the h1 text
+    function updateH1() {
+      if (h1Text.innerText === 'Tic Tac Toe: X needs to go') {
+        h1Text.innerText = 'Tic Tac Toe: O needs to go'
+      } else if (h1Text.innerText = 'Tic Tac Toe: O needs to go'){
+        h1Text.innerText = 'Tic Tac Toe: X needs to go'
+      }
+      
+    }
+
 
 let buttons = document.getElementsByClassName('col-4');
 
@@ -209,13 +218,7 @@ for (let i = 0; i < buttons.length; i++) {
     element.addEventListener('click', clickHandler)
 }
 
-// btn.addEventListener('click', (e) => {
-//     console.log('FROM INLINE FUNCTION: ', e);
-// })
 
-// btn.addEventListener('click', clickHandler)
-
-// btn.addEventListener('click', (e) => clickHandler(e, 'test', true))
 
 
 

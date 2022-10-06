@@ -68,3 +68,35 @@
   // clicky.addEventListener('click', ()=>{
   //   console.log('clicked me')
   // })
+
+
+/////////////////////// This changes a divs bg-color\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+  // let attempt = document.getElementById('tile')
+  // function attemptToClick() {
+  //   attempt.setAttribute('class', 'bg-success')
+  //   console.log('This clicked')
+  // }
+  
+  // attempt.setAttribute('onClick', 'attemptToClick()')
+  
+
+
+////////// This function was the first attempt for winning conditions\\\\\\\\\
+
+  // function areYaWinningSon(arr) {
+  //   for (let i = 0; i < arr.length; i++) {
+  //       let a = arr[i][0]
+  //       let b = arr[i][1]
+  //       let c = arr[i][2]
+  //       if (a === 0 || b === 0 || c === 0) {
+  //           console.log('nope')
+  //           continue;
+  //       }
+  //       if (a === 'x' && b === 'x' && c ==='x') {
+  //           console.log('x won baby')
+  //           break}
+  //       if (a === 'o' && b === 'o'&& c==='o') {
+  //           console.log('o won baby')
+  //           break}
+  //   }
+  // }
