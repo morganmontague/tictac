@@ -105,22 +105,23 @@ function createElement (area, element, text, clas, parent) {
     createElement.innerText = `${text}`
   }
 
+  function createCol (text, clas, parent, id) {
+    let createElement = document.createElement('div')
+    parent.appendChild(createElement)
+    createElement.setAttribute('id',id)
+    element=document.getElementById(id)
+    createElement.setAttribute('class', clas)
+    createElement.innerText = `${text}`
+  }
+
   createElement('top', 'div', '', 'row', blah);
   let rowParent = document.getElementById('topid');
   console.log(rowParent)
   for (let index = 0; index < 9; index++) {
-    createElement(`${index}Col`, 'div', `column${index}`, 'col-4 border', rowParent)
+    createCol(`${index}`, 'col-4 border', rowParent, `${index}`)
   }
 
-  // for (let index = 0; index < 9; index++){
-  //   let `${index}Column` = document.getElementById(`${index}Colid`)
-  // }
 
-  // let clicky = document.getElementsByClassName('col-4');
-  // console.log(clicky)
-  // clicky.addEventListener('click', ()=>{
-  //   console.log('clicked me')
-  // })
 
   let attempt = document.getElementById('tile')
 function attemptToClick() {
@@ -190,7 +191,31 @@ whim()
 
 
 
+// IN INDEX.HTML
+//     <button class="tile" data-tile-number="0">CLICK ME</button>
+//     <button class="tile" data-tile-number="1">CLICK ME</button>
+//     <button class="tile" data-tile-number="2">CLICK ME</button>
 
+function clickHandler(e) {
+    console.log('FROM REFERENCED FUNCTION');
+    let colNumber = e.target.id;
+    console.log('TILE:', colNumber);
+}
+
+let buttons = document.getElementsByClassName('col-4');
+
+for (let i = 0; i < buttons.length; i++) {
+    const element = buttons[i];
+    element.addEventListener('click', clickHandler)
+}
+
+// btn.addEventListener('click', (e) => {
+//     console.log('FROM INLINE FUNCTION: ', e);
+// })
+
+// btn.addEventListener('click', clickHandler)
+
+// btn.addEventListener('click', (e) => clickHandler(e, 'test', true))
 
 
 

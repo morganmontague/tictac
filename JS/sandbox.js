@@ -57,3 +57,14 @@
 //      parentArea = document.getElementById(id)
 //   }
 //   createRow('top', 'div', 'top row', 'row', 'blah')
+
+
+  // for (let index = 0; index < 9; index++){
+  //   let `${index}Column` = document.getElementById(`${index}Colid`)
+  // }
+
+  // let clicky = document.getElementsByClassName('col-4');
+  // console.log(clicky)
+  // clicky.addEventListener('click', ()=>{
+  //   console.log('clicked me')
+  // })
