@@ -7,6 +7,24 @@ createElement('h1', 'h1', 'Tic Tac Toe: X needs to go', 'h1', headerContainer)
 let h1Text = document.getElementById('h1id')
 
 
+let testBoard = 
+[
+  0,0,0,
+  0,0,0,
+  0,0,0,
+];
+
+let winning = [
+  [0, 1, 2],
+  [3, 4, 5],
+  [6, 7, 8],
+  [0, 3, 6],
+  [1, 4, 7],
+  [2, 5, 8],
+  [0, 4, 8],
+  [2, 4, 6]
+];
+
 // let cloneBoard = Array.from(board)
 
 
@@ -23,68 +41,17 @@ let h1Text = document.getElementById('h1id')
   let x = 'x'
   let o = 'o'
 
-
-  let tileText = document.getElementById('tile')
-
-
-
+  
+  
+  
   let playerTurn = 1
-//   let btn = document.getElementById('clickMe')
-//   btn.addEventListener('click', () => {
-//     if (playerTurn % 2 === 0) {
-//         tileText.textContent = 'O'
-//         console.log('O works')
-//         playerTurn = playerTurn +1
-//     } else if (playerTurn % 2 === 1){
-//         console.log('X works')
-//         tileText.innerText = 'X'
-//         playerTurn = playerTurn+1
-//     }
-//   }
-//   )
-// function changeTurn() {
-//   if (playerTurn % 2 === 0) {
-//     tileText.textContent = 'O'
-//     console.log('O works')
-//     playerTurn = playerTurn +1
-// } else if (playerTurn % 2 === 1){
-//     console.log('X works')
-//     tileText.innerText = 'X'
-//     playerTurn = playerTurn+1
-// }
-// }
-
- 
-
-  // let board = [o,o,x,0,x,0,x,0,0]
-  // board = [0,0,0,0,0,0,0,0,0]
-  // console.log(board)
   
 
 
-//  let winningThree = [
-//     [board[0], board[1], board[2]],
-//     [board[3], board[4], board[5]],
-//     [board[6], board[7], board[8]],
-//     [board[0], board[3], board[6]],
-//     [board[1], board[4], board[7]],
-//     [board[2], board[5], board[8]],
-//     [board[0], board[4], board[8]],
-//     [board[2], board[4], board[6]]
-// ];
-
-// board.splice(5, 1, x)
 
 
 
 
-
-// areYaWinningSon(winningThree)
-
-
-function changeBox() {
-  /////////////////////////////// figure this OUT this will be the test to see if I can change an attribute of one of the 9 columns and prevent other changes 
-}
 
 function createElement (area, element, text, clas, parent) {
     let id = `${area}id` 
@@ -113,45 +80,7 @@ function createElement (area, element, text, clas, parent) {
 
 
 
-
-
-
-
-
-
-
-
-  let testBoard = 
-  [
-    0,0,0,
-    0,0,0,
-    0,0,0,
-  ]
-  console.log(testBoard)
-  
-
-
- let winning = [
-    [0, 1, 2],
-    [3, 4, 5],
-    [6, 7, 8],
-    [0, 3, 6],
-    [1, 4, 7],
-    [2, 5, 8],
-    [0, 4, 8],
-    [2, 4, 6]
-];
-
-// for (let i = 0; i < winConditions.length; i++) {
-//   const line = winConditions[i]; // [0,1,2]
-//   console.log('LINE: ', line);
-//   console.log(line[0], line[1], line[2]);
-//   console.log(`BOARDSTATE[${line[0]}]: `, boardState[line[0]])
-//   console.log(`BOARDSTATE[${line[1]}]: `, boardState[line[1]])
-//   console.log(`BOARDSTATE[${line[2]}]: `, boardState[line[2]])
-
-
-function whim() {
+function areYaWinningSon() {
   for (let i = 0; i < winning.length; i++) {
     let line = winning[i]
     console.log('line', line)
@@ -159,18 +88,18 @@ function whim() {
       let b = testBoard[line[1]];
       let c = testBoard[line[2]];
       if (a === 0 || b === 0 || c === 0) {
-          console.log('nope')
+          // console.log('nope')
           continue;
       }
       if (a === 'x' && b === 'x' && c ==='x') {
-          console.log('x won baby')
+          h1Text.innerText = 'X Won'
           break}
       if (a === 'o' && b === 'o'&& c==='o') {
-          console.log('o won baby')
+          h1Text.innerText = 'O Won'
           break}
   }
 }
-whim()
+areYaWinningSon()
 
 
 
@@ -182,20 +111,24 @@ whim()
 function clickHandler(e) {
     console.log('FROM REFERENCED FUNCTION');
     let colNumber = e.target.id;
-    // console.log('TILE:', colNumber);
+    console.log('TILE:', colNumber);
     let changeUp = document.getElementById(colNumber)
     console.log(changeUp)
     if (playerTurn % 2 === 0) {
       changeUp.textContent = 'O'
       changeUp.removeEventListener('click', clickHandler)
       playerTurn = playerTurn +1
+      testBoard[`${colNumber}`] = 'o'
     } else if (playerTurn % 2 === 1){
       changeUp.removeEventListener('click', clickHandler)
       changeUp.innerText = 'X'
       playerTurn = playerTurn+1
+      testBoard[`${colNumber}`] = 'x'
     }
-
     updateH1()
+    if (playerTurn >= 5) {
+      areYaWinningSon(testBoard)
+    }
     }
 
 

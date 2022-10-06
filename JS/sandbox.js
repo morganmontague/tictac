@@ -100,3 +100,40 @@
   //           break}
   //   }
   // }
+
+      // let tileText = document.getElementById('tile')
+//   let btn = document.getElementById('clickMe')
+//   btn.addEventListener('click', () => {
+//     if (playerTurn % 2 === 0) {
+//         tileText.textContent = 'O'
+//         console.log('O works')
+//         playerTurn = playerTurn +1
+//     } else if (playerTurn % 2 === 1){
+//         console.log('X works')
+//         tileText.innerText = 'X'
+//         playerTurn = playerTurn+1
+//     }
+//   }
+//   )
+// function changeTurn() {
+//   if (playerTurn % 2 === 0) {
+//     tileText.textContent = 'O'
+//     console.log('O works')
+//     playerTurn = playerTurn +1
+// } else if (playerTurn % 2 === 1){
+//     console.log('X works')
+//     tileText.innerText = 'X'
+//     playerTurn = playerTurn+1
+// }
+// }
+
+ 
+
+  // let board = [o,o,x,0,x,0,x,0,0]
+  // board = [0,0,0,0,0,0,0,0,0]
+  // console.log(board)
+  
+
+
+
+
