@@ -4,3 +4,14 @@
 body {
     background: lightblue;
 }
+
+.xcolor {
+    background-color: green;
+}
+.ocolor {
+    background-color: crimson;
+}
+
+.borderbl {
+    border: black 2px solid;
+}

@@ -10,7 +10,7 @@ createElement('h1', 'h1', 'Tic Tac Toe: X needs to go', 'h1 m-4', headerContaine
 ///// add local storage to see how many times x or o has won \\\\\\\
 
 createElement('main', 'div', '', 'container',headerContainer);
-createElement('counter', 'div', '  X has won: \n  O has won: \n Ties: ', 'h4 m-4', headerContainer);
+
 
 }
 
@@ -73,7 +73,7 @@ function createElement (area, element, text, clas, parent) {
   let rowParent = document.getElementById('topid');
 
   for (let index = 0; index < 9; index++) {
-    createCol('', 'col-4 border fs-1 heightCheat', rowParent, `${index}`)
+    createCol('', 'col-4 borderbl fs-1 heightCheat', rowParent, `${index}`)
   }
   }
 
@@ -113,12 +113,14 @@ function createElement (area, element, text, clas, parent) {
         let changeUp = document.getElementById(colNumber)
         if (playerTurn % 2 === 0) {
           changeUp.textContent = 'O'
+          //changeUp.setAttribute('class', 'ocolor')  // this didn't work
           changeUp.removeEventListener('click', clickHandler)
           playerTurn = playerTurn +1
           testBoard[`${colNumber}`] = 'o'
         } else if (playerTurn % 2 === 1){
           changeUp.removeEventListener('click', clickHandler)
           changeUp.innerText = 'X'
+          //changeUp.setAttribute('class', 'xcolor') // this didn't work
           playerTurn = playerTurn+1
           testBoard[`${colNumber}`] = 'x'
         }
@@ -163,7 +165,7 @@ function createElement (area, element, text, clas, parent) {
     }
 
 
-    createElement('reset', 'button', 'RESET', 'btn btn-warning m-4', headerContainer)
+    createElement('reset', 'button', 'RESET', 'btn btn-warning m-4 btn-outline-dark', headerContainer)
 
     let resetBtn = document.getElementById('resetid')
 
