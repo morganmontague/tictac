@@ -119,7 +119,9 @@ function areYaWinningSon(arr) {
 areYaWinningSon(winningThree)
 
 
-
+function paintBox() {
+  /////////////////////////////// figure this OUT this will be the test to see if I can change an attribute of one of the 9 columns and prevent other changes 
+}
 
 function createElement (area, element, text, clas, parent) {
     let id = `${area}id` 
@@ -149,10 +151,13 @@ function createElement (area, element, text, clas, parent) {
 
   let attempt = document.getElementById('tile')
 function attemptToClick() {
+  attempt.setAttribute('class', 'bg-success')
   console.log('This clicked')
 }
 
 attempt.setAttribute('onClick', 'attemptToClick()')
+
+
 
 
 
