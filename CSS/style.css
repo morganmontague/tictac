@@ -1,0 +1,20 @@
+.heightCheat {
+    height: 150px
+}
+body {
+    background: lightblue;
+    font-family: "Audiowide", sans-serif;
+}
+
+.xcolor {
+    background-color: green;
+}
+.ocolor {
+    background-color: crimson;
+}
+
+.borderbl {
+    border: black 2px solid;
+    font-size: 70px;
+    font-family: "Audiowide", sans-serif;
+}
