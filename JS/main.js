@@ -198,3 +198,10 @@ resetBtn.addEventListener("click", () => {
 // }
 
 // winCount()
+
+// let playerSym = 'X';
+// if (h1Text.innerText.indexOf('O') !== -1) {
+//     playerSym = 'O';
+// }
+
+// h1Text.innerText === `Tic Tac Toe: ${playerSym} needs to go`
